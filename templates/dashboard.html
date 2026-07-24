@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HealthFit AI Dashboard</title>
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+body{
+
+    background:
+    linear-gradient(135deg,#e8fff5,#d6f5ff);
+
+    min-height:100vh;
+
+}
+
+
+
+/* Header */
+
+
+header{
+
+    background:#16a085;
+
+    padding:25px;
+
+    color:white;
+
+    text-align:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+
+}
+
+
+header h1{
+
+    font-size:35px;
+
+}
+
+
+header p{
+
+    margin-top:10px;
+
+}
+
+
+
+
+/* Search */
+
+
+.search-box{
+
+    text-align:center;
+
+    margin:30px;
+
+}
+
+
+.search-box input{
+
+    width:350px;
+
+    max-width:90%;
+
+    padding:15px 20px;
+
+    border-radius:30px;
+
+    border:none;
+
+    outline:none;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+    font-size:16px;
+
+}
+
+
+
+
+
+/* Cards */
+
+
+.container{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
+    padding:20px;
+
+}
+
+
+
+
+.card{
+
+    width:260px;
+
+    background:white;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.12);
+
+    transition:0.4s;
+
+    cursor:pointer;
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-12px) scale(1.03);
+
+}
+
+
+
+.card h2{
+
+    color:#16a085;
+
+    margin:15px;
+
+}
+
+
+
+.card p{
+
+    color:#555;
+
+}
+
+
+
+
+.icon{
+
+    font-size:50px;
+
+}
+
+
+
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+
+
+
+/* Footer */
+
+
+footer{
+
+    margin-top:40px;
+
+    background:#16a085;
+
+    color:white;
+
+    text-align:center;
+
+    padding:15px;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<header>
+
+<h1>
+💚 HealthFit AI Dashboard
+</h1>
+
+
+<p>
+Choose your health concern and get personalized guidance
+</p>
+
+
+</header>
+
+
+
+
+<div class="search-box">
+
+
+<input type="text"
+id="search"
+placeholder="Search Health Problem..."
+onkeyup="searchDisease()">
+
+
+
+</div>
+
+
+
+
+
+
+<div class="container" id="cards">
+
+
+
+<a href="/health/bp">
+
+<div class="card">
+
+<div class="icon">
+❤️
+</div>
+
+<h2>Blood Pressure</h2>
+
+<p>
+BP control diet & exercise plans
+</p>
+
+</div>
+
+</a>
+
+
+
+
+
+<a href="/health/sugar">
+
+<div class="card">
+
+<div class="icon">
+🍬
+</div>
+
+<h2>Diabetes</h2>
+
+<p>
+Sugar management guidance
+</p>
+
+</div>
+
+</a>
+
+
+
+
+
+<a href="/health/fever">
+
+<div class="card">
+
+<div class="icon">
+🤒
+</div>
+
+<h2>Fever</h2>
+
+<p>
+Recovery food and care tips
+</p>
+
+</div>
+
+</a>
+
+
+
+
+
+<a href="/health/gas">
+
+<div class="card">
+
+<div class="icon">
+🫃
+</div>
+
+<h2>Gas Trouble</h2>
+
+<p>
+Digestive health solutions
+</p>
+
+</div>
+
+</a>
+
+
+
+
+
+<a href="/health/weight">
+
+<div class="card">
+
+<div class="icon">
+⚖️
+</div>
+
+<h2>Weight Loss</h2>
+
+<p>
+Fitness and healthy diet plan
+</p>
+
+</div>
+
+</a>
+
+
+
+
+
+<a href="/health/stress">
+
+<div class="card">
+
+<div class="icon">
+🧠
+</div>
+
+<h2>Stress</h2>
+
+<p>
+Mental wellness suggestions
+</p>
+
+</div>
+
+</a>
+
+
+
+
+
+
+<a href="/health/sleep">
+
+<div class="card">
+
+<div class="icon">
+🌙
+</div>
+
+<h2>Sleep Problems</h2>
+
+<p>
+Improve sleep quality
+</p>
+
+</div>
+
+</a>
+
+
+
+
+
+
+<a href="/health/fitness">
+
+<div class="card">
+
+<div class="icon">
+🏃
+</div>
+
+<h2>Fitness</h2>
+
+<p>
+Daily workout plans
+</p>
+
+</div>
+
+</a>
+
+
+
+
+
+</div>
+
+
+
+
+
+<footer>
+
+© 2026 HealthFit AI | Smart Health Assistant
+
+</footer>
+
+
+
+
+
+<script>
+
+
+function searchDisease(){
+
+
+let input=document
+.getElementById("search")
+.value
+.toLowerCase();
+
+
+let cards=document
+.querySelectorAll(".card");
+
+
+
+cards.forEach(card=>{
+
+
+let text=card.innerText.toLowerCase();
+
+
+if(text.includes(input))
+
+{
+
+card.parentElement.style.display="block";
+
+}
+
+else
+
+{
+
+card.parentElement.style.display="none";
+
+}
+
+
+});
+
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>

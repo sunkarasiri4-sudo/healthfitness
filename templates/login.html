@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HealthFit AI - Login</title>
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+    135deg,
+    #16a085,
+    #2ecc71,
+    #1abc9c
+    );
+
+}
+
+
+/* Login Container */
+
+.container{
+
+    width:420px;
+    max-width:90%;
+
+    padding:35px;
+
+    background:rgba(255,255,255,0.18);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.2);
+
+    text-align:center;
+
+}
+
+
+
+/* Heading */
+
+
+.logo{
+
+    font-size:40px;
+
+}
+
+
+h1{
+
+    color:white;
+
+    margin:10px 0;
+
+    font-size:32px;
+
+}
+
+
+.quote{
+
+    color:white;
+
+    margin-bottom:25px;
+
+    font-size:16px;
+
+}
+
+
+
+
+/* Input Fields */
+
+
+.input-box{
+
+    margin:15px 0;
+
+}
+
+
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:30px;
+
+    background:white;
+
+    font-size:16px;
+
+}
+
+
+
+/* Button */
+
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:20px;
+
+
+    border:none;
+
+    border-radius:30px;
+
+
+    background:#ffffff;
+
+    color:#16a085;
+
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+
+
+button:hover{
+
+    background:#16a085;
+
+    color:white;
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+.back{
+
+    margin-top:20px;
+
+}
+
+
+.back a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+}
+
+
+
+.back a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="logo">
+💚
+</div>
+
+
+<h1>
+HealthFit AI
+</h1>
+
+
+<p class="quote">
+"Take care of your body, it's the only place you live in"
+</p>
+
+
+
+<form action="/login" method="POST">
+
+
+<div class="input-box">
+
+<input type="text"
+name="name"
+placeholder="Enter Your Name"
+required>
+
+</div>
+
+
+
+<div class="input-box">
+
+<input type="number"
+name="age"
+placeholder="Enter Your Age"
+required>
+
+</div>
+
+
+
+<div class="input-box">
+
+<input type="tel"
+name="phone"
+placeholder="Enter Phone Number"
+required>
+
+</div>
+
+
+
+
+<div class="input-box">
+
+<input type="email"
+name="email"
+placeholder="Enter Email Address"
+required>
+
+</div>
+
+
+
+
+<button type="submit">
+
+Start Health Journey 🚀
+
+</button>
+
+
+
+</form>
+
+
+
+<div class="back">
+
+<a href="/">
+← Back To Home
+
+</a>
+
+</div>
+
+
+
+</div>
+
+
+
+<script>
+
+
+// Input animation
+
+const inputs=document.querySelectorAll("input");
+
+
+inputs.forEach(input=>{
+
+input.addEventListener("focus",()=>{
+
+input.style.transform="scale(1.03)";
+
+});
+
+
+input.addEventListener("blur",()=>{
+
+input.style.transform="scale(1)";
+
+});
+
+
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>
